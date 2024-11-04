@@ -3,11 +3,14 @@ package com.khadok.service;
 import com.khadok.dto.RestaurantDto;
 import com.khadok.model.Restaurant;
 import com.khadok.model.User;
+import com.khadok.request.CreateRestaurantRequest;
 
 import java.util.List;
 
 public interface RestaurantService {
+    public Restaurant createRestaurant(CreateRestaurantRequest req, User user);
 
+    public Restaurant updateRestaurant(Long restaurantId, CreateRestaurantRequest updatedRestaurant) throws Exception;
     public void deleteRestaurant(Long restaurantId) throws Exception;
 
     public List<Restaurant> getAllRestaurant();
